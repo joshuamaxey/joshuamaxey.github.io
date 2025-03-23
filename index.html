@@ -44,8 +44,8 @@
 							</a>
 						  </li>
 
-						<li>
-							<a href="mailto:your.email@example.com" class="icon solid fa-envelope">
+						  <li>
+							<a href="#" class="icon solid fa-envelope" onclick="copyEmail(); return false;">
 							  <span class="label">Email</span>
 							</a>
 						  </li>
@@ -496,6 +496,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				function copyEmail() {
+				  const email = "joshua.maxey.leija@gmail.com";
+				  navigator.clipboard.writeText(email)
+					.then(() => {
+					  alert("Email copied to clipboard!");
+					})
+					.catch((err) => {
+					  console.error("Failed to copy email: ", err);
+					});
+				}
+			  </script>
 	</body>
 </html>
