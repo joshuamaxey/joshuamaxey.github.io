@@ -49,6 +49,11 @@
 							  <span class="label">Email</span>
 							</a>
 						  </li>
+						  <li>
+							<a href="tel:+18305703384" class="icon solid fa-phone">
+							  <span class="label">Phone</span>
+							</a>
+						  </li>
 					</ul>
 				</footer>
 			</section>
@@ -123,26 +128,17 @@
 							</section>
 
 						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form id="contact-form">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" required /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" required /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6" required></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
+						<section id="four">
+							<div class="container">
+							  <h3>Contact Me</h3>
+							  <p>
+								I'd love to hear from you! Feel free to reach out via <a href="mailto:your.email@example.com">email</a>,
+								connect with me on <a href="https://www.linkedin.com/in/joshua-maxey-389570357/">LinkedIn</a>,
+								check out my work on <a href="https://github.com/joshuamaxey">GitHub</a>, or give me a call or text at
+								<a href="tel:+1234567890">+1 (830) 570-3384</a>.
+							  </p>
+							</div>
+						  </section>
 
 						<!-- Five -->
 						<!--
@@ -508,52 +504,5 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					});
 				}
 			  </script>
-			  <script>
-				document.getElementById("contact-form").addEventListener("submit", async function(event) {
-					event.preventDefault();
-
-					const name = document.getElementById("name").value;
-					const email = document.getElementById("email").value;
-					const subject = document.getElementById("subject").value || "No Subject";
-					const message = document.getElementById("message").value;
-
-					const emailData = {
-						personalizations: [
-							{
-								to: [{ email: "joshua.maxey.leija@gmail.com" }],
-								subject: `New Contact Form Submission: ${subject}`
-							}
-						],
-						from: { email: email }, // The user's email
-						content: [
-							{
-								type: "text/plain",
-								value: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-							}
-						]
-					};
-
-					try {
-						const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json",
-								Authorization: "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"
-							},
-							body: JSON.stringify(emailData)
-						});
-
-						if (response.ok) {
-							alert("Message sent successfully!");
-							document.getElementById("contact-form").reset();
-						} else {
-							alert("Failed to send message. Please try again later.");
-						}
-					} catch (error) {
-						console.error("Error sending email:", error);
-						alert("An error occurred while sending your message.");
-					}
-				});
-			</script>
 	</body>
 </html>
